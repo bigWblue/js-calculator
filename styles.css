@@ -1,0 +1,133 @@
+html {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: whitesmoke;
+    text-align: center;
+}
+
+h1 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 2.5rem;
+    padding: 5px 0;
+}
+
+#calc-container {
+    display: inline-block;
+    width: 25%;
+    border: 1px solid black;
+    background-color: rgb(144, 255, 209);
+    padding: 15px;
+    border-radius: 5px;
+}
+
+#keyboard-container {
+    display: grid;
+    grid-template-columns: 50px 1fr;
+    gap: 8px;
+    align-items: stretch;
+}
+
+#display {
+    display: block;
+    background-color: hsl(0, 0%, 89%);
+    border-radius: 5px;
+    border: 1px solid black;
+    padding: 5px 8px;
+    margin-bottom: 10px;
+    font-size: 1.8rem;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    height: 35px;
+    text-align: right;
+}
+
+#keys-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 8px;
+}
+
+#keys-grid button, .clear-key {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    font-size: 2.5rem;
+    padding: 8px;
+    width: 100%;
+    border-radius: 4px;
+}
+
+.num-key {
+    background-color: hsl(0, 0%, 5%);
+    color: white;
+    font-weight: bold;
+    font-family: Verdana, sans-serif;
+}
+
+.num-key:hover {
+    background-color: hsl(0, 0%, 8%);
+    border-color: whitesmoke;
+}
+
+.num-key:active {
+    background-color: hsl(0, 0%, 2%);
+    border-color: darkslategray;
+}
+
+.operator-key {
+    background-color: hsl(34, 100%, 50%);
+    color: black;
+    font-weight: 500;
+    border-color: orange;
+}
+
+.operator-key:hover {
+    background-color: hsl(34, 100%, 60%);
+    border-color: darkorange;
+}
+
+.operator-key:active {
+    background-color:hsl(34, 100%, 45%);
+    border-color: orangered;
+}
+
+.clear-btn {
+    grid-column: 1/2;
+    grid-row: 1/2;
+    height: auto;
+    font-family: Georgia, Times, 'Times New Roman', serif;
+    font-size: 2rem;
+    border: none;
+    background-color: whitesmoke;
+    border: 2px solid grey;
+    border-radius: 6px;
+}
+
+.clear-btn:hover {
+    background-color: hsl(0, 0%, 92%);
+    border-color: hsl(0, 0%, 46%);
+}
+
+.clear-btn:active {
+    background-color:hsl(0, 0%, 88%);
+    border-color: hsl(210, 13%, 35%);
+}
+
+#equal-sign {
+    border-color: hsl(120, 100%, 20%);
+    background-color: green;
+    color: white;
+    font-weight: 900;
+}
+
+#equal-sign:hover {
+    background-color: hsl(120, 100%, 30%);
+    border-color: darkgreen;
+}
+
+#equal-sign:active {
+    background-color: hsl(120, 100%, 15%);
+    border-color: olivedrab;
+}
