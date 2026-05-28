@@ -93,10 +93,14 @@ h1 {
     border-color: orangered;
 }
 
-.clear-btn {
+#clear-back-btns {
     grid-column: 1/2;
     grid-row: 1/2;
-    height: auto;
+}
+
+.clear-btn {
+    height: 75%;
+    width: 100%;
     font-family: Georgia, Times, 'Times New Roman', serif;
     font-size: 2rem;
     border: none;
@@ -130,4 +134,25 @@ h1 {
 #equal-sign:active {
     background-color: hsl(120, 100%, 15%);
     border-color: olivedrab;
+}
+
+.backspace-btn {
+    height: 25%;
+    width: 100%;
+    font-family: monospace, Arial, Helvetica, sans-serif;
+    font-size: 3rem;
+    border: none;
+    background-color: whitesmoke;
+    border: 2px solid grey;
+    border-radius: 6px;
+}
+
+.backspace-btn:hover {
+    background-color: hsl(0, 0%, 92%);
+    border-color: hsl(0, 0%, 46%);
+}
+
+.backspace-btn:active {
+    background-color:hsl(0, 0%, 88%);
+    border-color: hsl(210, 13%, 35%);
 }
