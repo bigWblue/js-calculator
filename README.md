@@ -1,29 +1,39 @@
 # JavaScript Calculator
-<img width="776" height="405" alt="calculator demonstration" src="https://github.com/user-attachments/assets/c6da983b-51ce-45a7-ab2f-66c669d5d31b" />
+<img width="752" height="397" alt="calculator demonstration" src="https://github.com/user-attachments/assets/9bd16aec-13e6-4e21-8c8f-a472393a769d" />
 
 A simple calculator built on JavaScript that can work with the 4 basic operations (addition, subtraction, multiplication and division), following the proper order of operations. 
 
 ## Files
 + index.html
 + styles.css
-+ script.js
++ calculator.js
++ userInterface.js
++ **images**
+  + favicon.png
++ **localServer**
+  + jsLocalServer.bat
+  + pyLocalServer.bat
 
 ## Features
 + Basic Arithmetic: + - * /
 + Order of operations: Follows the proper precedence from the operators in the expression.
 
 ## How to run
-+ Open index.html in your browser.
++ First you must set up a local server otherwise the calculator won't run, you can <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Howto/Tools_and_setup/set_up_a_local_testing_server" target="_blank">read this</a>, or:
++ + Check for extensions that do that in your code editor like **Live Preview** or **Live Server** from VS Code
+  + If you have **Node.js** installed in your system clicking _jsLocalServer.bat_ should start a local server.
+  + If you have **Python 3** installed in your system clicking _pyLocalServer.bat_ will start a local server.
++ With the local server running, open <a href="http://localhost:8000" target="_blank">localhost:8000</a> in your browser to use the calculator.
 
 ## Usage
 + Click or type the numbers and operators to see them in the display.
-+ Press Backspace to remove the last character in the expression.
-+ Click = or press the Enter/Return key to evaluate the expression.
-+ Click C or press the Space key to clear everything.
++ Click **←** or press Backspace to remove the last character in the expression.
++ Click **=** or press the Enter/Return key to evaluate the expression.
++ Click **C** or press the Space key to clear everything.
 
 ## Implementation notes
 + Evaluation approach:
-  + First I check if the operators for multiplication or division are present in the given operation, if so solve them first and return an operation with only addition and subtraction to be solved by another function.
+  + First it checks if the operators for multiplication or division are present in the given operation, if so solve them first and return an operation with only addition and subtraction to be solved by another function.
 + Current limitations:
   + No parentheses support
   + No exponentiation support
@@ -32,7 +42,7 @@ A simple calculator built on JavaScript that can work with the 4 basic operation
   + Has only been tested on windows desktop using Firefox
 
 ## Ideas
++ Add a collapsible menu to show more buttons
 + Add parentheses support
 + Add exponentiation support
 + Add buttons and support for functions such a sine, cosine and tangent
-+ Split the JavaScript file into different modules for evaluation and handling clicks
