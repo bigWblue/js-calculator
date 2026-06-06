@@ -42,7 +42,7 @@ A simple calculator built on JavaScript that can work with the 4 basic operation
   + Has only been tested on windows desktop using Firefox
 
 ## Ideas
-+ Add a collapsible menu to show more buttons
++ Add a collapsible menu to show more buttons ✔
 + Add parentheses support
 + Add exponentiation support
 + Add buttons and support for functions such a sine, cosine and tangent
