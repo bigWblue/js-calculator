@@ -4,9 +4,13 @@ const display = document.getElementById('display');
 
 const operatorKeys = document.querySelectorAll('.operator-key');
 const numKeys = document.querySelectorAll('.num-key');
+
 const equalKey = document.getElementById('equal-sign');
 const clearBtn = document.querySelector('.clear-btn');
 const backspaceBtn = document.querySelector('.backspace-btn');
+
+const expandBtn = document.getElementById('expand-btn');
+const extraBtns = document.getElementById('extra-btns-container');
 
 
 let firstNumber = false;
@@ -62,10 +66,23 @@ document.addEventListener('keydown', (e) => {
     else if (keyPressed === 'Backspace') {
         handleBackspace();
     }
+    e.target.blur()
 })
 
 clearBtn.addEventListener('click', clearDisplay);
 backspaceBtn.addEventListener('click', handleBackspace);
+
+extraBtns.classList.add('hidden');
+expandBtn.addEventListener('click', () => {
+    extraBtns.classList.toggle('hidden');
+    extraBtns.classList.toggle('expanded');
+    if (extraBtns.classList.contains('hidden')) {
+        expandBtn.innerText = '◀'
+    }
+    else {
+        expandBtn.innerText = '▶'
+    }
+})
 
 keysToDisplay(numKeys);
 keysToDisplay(operatorKeys);
