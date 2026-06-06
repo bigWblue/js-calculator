@@ -1,3 +1,4 @@
+/*BASIC ELEMENTS*/
 html {
     box-sizing: border-box;
 }
@@ -11,6 +12,13 @@ h1 {
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 2.5rem;
     padding: 5px 0;
+}
+
+/* CONTAINERS */
+#outer-div {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
 
 #calc-container {
@@ -29,6 +37,39 @@ h1 {
     align-items: stretch;
 }
 
+#keys-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 8px;
+}
+
+#clear-back-btns {
+    grid-column: 1/2;
+    grid-row: 1/2;
+}
+
+#extra-btns-container {
+    grid-template-columns: 1fr 1fr;
+    background-color: hsl(160, 59%, 45%);
+}
+
+#extra-btns-container button {
+    font-size: 1.3rem;
+    font-family: monospace;
+    font-weight: bolder;
+    margin: 2px 1px;
+    padding: 2px 5px;
+}
+
+.hidden {
+    display: none;
+}
+
+.expanded {
+    display: grid;
+}
+
+/* ELEMENTS IN CONTAINERS */
 #display {
     display: block;
     background-color: hsl(0, 0%, 89%);
@@ -37,15 +78,9 @@ h1 {
     padding: 5px 8px;
     margin-bottom: 10px;
     font-size: 1.8rem;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: monospace;
     height: 35px;
     text-align: right;
-}
-
-#keys-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: 8px;
 }
 
 #keys-grid button, .clear-key {
@@ -93,13 +128,8 @@ h1 {
     border-color: orangered;
 }
 
-#clear-back-btns {
-    grid-column: 1/2;
-    grid-row: 1/2;
-}
-
 .clear-btn {
-    height: 75%;
+    height: 73%;
     width: 100%;
     font-family: Georgia, Times, 'Times New Roman', serif;
     font-size: 2rem;
@@ -107,6 +137,7 @@ h1 {
     background-color: whitesmoke;
     border: 2px solid grey;
     border-radius: 6px;
+    margin-bottom: 7px;
 }
 
 .clear-btn:hover {
@@ -155,4 +186,20 @@ h1 {
 .backspace-btn:active {
     background-color:hsl(0, 0%, 88%);
     border-color: hsl(210, 13%, 35%);
+}
+
+#expand-btn {
+    border: none;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    background-color: rgb(105, 219, 172);
+    padding: 0 1px;
+}
+
+#expand-btn:hover {
+    background-color: rgb(90, 190, 149);
+}
+
+#expand-btn:active {
+    background-color: rgb(84, 175, 137);
 }
