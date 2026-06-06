@@ -3,38 +3,47 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="styles.css">
+	<link rel="stylesheet" href="./styles.css">
 	<link rel="icon" type="image/x-icon" href="./images/favicon.png">
 	<title>Calculator</title>
 </head>
 <body>
 	<h1>Calculator</h1>
-	<div id="calc-container">
-		<div id="display-container">
-			<span id="display">0</span>
+	<div id="outer-div">
+		<button id="expand-btn">◀</button>
+		<div id="extra-btns-container">
+			<button>(</button>
+			<button>)</button>
+			<button>x²</button>
+			<button>√</button>
 		</div>
-		<div id="keyboard-container">
-			<div id="clear-back-btns">
-				<button class="clear-btn">C</button>
-				<button class="backspace-btn">←</button>
+		<div id="calc-container">
+			<div id="display-container">
+				<span id="display">0</span>
 			</div>
-			<div id="keys-grid">
-				<button class="num-key">7</button>
-				<button class="num-key">8</button>
-				<button class="num-key">9</button>
-				<button class="operator-key">/</button>
-				<button class="num-key">4</button>
-				<button class="num-key">5</button>
-				<button class="num-key">6</button>
-				<button class="operator-key">*</button>
-				<button class="num-key">1</button>
-				<button class="num-key">2</button>
-				<button class="num-key">3</button>
-				<button class="operator-key">-</button>
-				<button class="num-key">0</button>
-				<button class="num-key">.</button>
-				<button id="equal-sign">=</button>
-				<button class="operator-key">+</button>
+			<div id="keyboard-container">
+				<div id="clear-back-btns">
+					<button class="clear-btn">C</button>
+					<button class="backspace-btn">←</button>
+				</div>
+				<div id="keys-grid">
+					<button class="num-key">7</button>
+					<button class="num-key">8</button>
+					<button class="num-key">9</button>
+					<button class="operator-key">/</button>
+					<button class="num-key">4</button>
+					<button class="num-key">5</button>
+					<button class="num-key">6</button>
+					<button class="operator-key">*</button>
+					<button class="num-key">1</button>
+					<button class="num-key">2</button>
+					<button class="num-key">3</button>
+					<button class="operator-key">-</button>
+					<button class="num-key">0</button>
+					<button class="num-key">.</button>
+					<button id="equal-sign">=</button>
+					<button class="operator-key">+</button>
+				</div>
 			</div>
 		</div>
 	</div>
