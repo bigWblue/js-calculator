@@ -16,13 +16,15 @@ A simple calculator built on JavaScript that can work with the 4 basic operation
 
 ## Features
 + Basic Arithmetic: + - * /
++ Parentheses, squaring numbers and square roots
 + Order of operations: Follows the proper precedence from the operators in the expression.
 
 ## How to run
-+ First you must set up a local server otherwise the calculator won't run, you can <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Howto/Tools_and_setup/set_up_a_local_testing_server" target="_blank">read this</a>, or:
++ Clone this repo
++ To run the calculator you must set up a local server, you can <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Howto/Tools_and_setup/set_up_a_local_testing_server" target="_blank">read this</a>, or:
 + + Check for extensions that do that in your code editor like **Live Preview** or **Live Server** from VS Code
-  + If you have **Node.js** installed in your system clicking _jsLocalServer.bat_ should start a local server.
-  + If you have **Python 3** installed in your system clicking _pyLocalServer.bat_ will start a local server.
+  + If you have **Node.js** installed in your Windows clicking _jsLocalServer.bat_ should start a local server.
+  + If you have **Python 3** installed in your Windows clicking _pyLocalServer.bat_ will start a local server.
 + With the local server running, open <a href="http://localhost:8000" target="_blank">localhost:8000</a> in your browser to use the calculator.
 
 ## Usage
@@ -30,19 +32,20 @@ A simple calculator built on JavaScript that can work with the 4 basic operation
 + Click **←** or press Backspace to remove the last character in the expression.
 + Click **=** or press the Enter/Return key to evaluate the expression.
 + Click **C** or press the Space key to clear everything.
++ Click "**(**" or "**)**" or press the corresponding keys in the keyboard to open/close parentheses.
++ Click **x²** or press **²** in your keyboard after a number to square it.
++ Click **√** or press **q** to get the square root of a number (remember to close the parentheses).
 
 ## Implementation notes
 + Evaluation approach:
-  + First it checks if the operators for multiplication or division are present in the given operation, if so solve them first and return an operation with only addition and subtraction to be solved by another function.
+  + In order it checks if square roots, exponentiation to the power of 2 or parentheses are present in the given operation, if so solve them first and return an operation with only addition and subtraction to be solved by another function.
 + Current limitations:
-  + No parentheses support
-  + No exponentiation support
   + No support for trigonometric functions or logarithms
 + System and browser compatibility:
-  + Has only been tested on windows desktop using Firefox
+  + Has only been tested on Windows desktop using Firefox
 
 ## Ideas
 + Add a collapsible menu to show more buttons ✔
-+ Add parentheses support
-+ Add exponentiation support
++ Add parentheses support ✔
++ Add exponentiation support ✔
 + Add buttons and support for functions such a sine, cosine and tangent
