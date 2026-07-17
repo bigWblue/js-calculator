@@ -10,8 +10,8 @@ const clearBtn = document.querySelector('.clear-btn');
 const backspaceBtn = document.querySelector('.backspace-btn');
 
 const expandBtn = document.getElementById('expand-btn');
-const extraBtns = document.getElementById('extra-btns-container');
-
+const extraBtnsContainer = document.getElementById('extra-btns-container');
+const extraKeys = document.querySelectorAll('.extra-key');
 
 let firstNumber = false;
 function clearDisplay() {
@@ -24,16 +24,38 @@ function handleBackspace() {
     display.textContent = display.textContent.slice(0, displayLastChar)
 }
 
+
 function keysToDisplay(keys) {
     for (const key of keys) {
         key.addEventListener('click', () => {
+            const previousChar = display.textContent[display.textContent.length - 1]
             if (firstNumber) {
                 if (display.textContent.length < 18) {
+                    if (key.textContent === '.' && previousChar === '.') {
+                        return
+                    }
+                    if (key.textContent === 'x²') {
+                        if (previousChar !== '²') {
+                            display.textContent += '²'
+                        }
+                        return
+                    }
+                    if (key.textContent === '√') {
+                        if ('-+*/'.includes(previousChar)) {
+                            display.textContent += '√('
+                        }
+                        return;
+                    }
                     display.textContent += key.textContent;
                 }
             }
             else {
-                if ('0123456789.-'.includes(key.textContent)){
+                if ('0123456789.-()√'.includes(key.textContent)){
+                    if (key.textContent === '√') {
+                        display.textContent = '√(';
+                        firstNumber = true;
+                        return;
+                    }
                     display.textContent = key.textContent;
                     firstNumber = true;}
             }
@@ -50,6 +72,7 @@ equalKey.addEventListener('click', () => {
 document.addEventListener('keydown', (e) => {
     const keyPressed = e.key;
     const btnsAndOperators = [...numKeys].concat([...operatorKeys])
+    const extraBtnsArr = [...extraKeys];
     const respectiveBtn = btnsAndOperators.find(btn => btn.textContent === keyPressed);
     if (respectiveBtn) {
         if (display.textContent === 'Error') {
@@ -66,17 +89,28 @@ document.addEventListener('keydown', (e) => {
     else if (keyPressed === 'Backspace') {
         handleBackspace();
     }
+    
+    if ('()²q'.includes(keyPressed)) {
+        const extraKeyMap = {
+            '(': '(',
+            ')': ')',
+            '²': 'x²',
+            'q': '√'
+        }
+        const respectiveExtraBtn = extraBtnsArr.find(btn => btn.textContent === extraKeyMap[keyPressed]);
+        respectiveExtraBtn.click();
+        }
     e.target.blur()
 })
 
 clearBtn.addEventListener('click', clearDisplay);
 backspaceBtn.addEventListener('click', handleBackspace);
 
-extraBtns.classList.add('hidden');
+extraBtnsContainer.classList.add('hidden');
 expandBtn.addEventListener('click', () => {
-    extraBtns.classList.toggle('hidden');
-    extraBtns.classList.toggle('expanded');
-    if (extraBtns.classList.contains('hidden')) {
+    extraBtnsContainer.classList.toggle('hidden');
+    extraBtnsContainer.classList.toggle('expanded');
+    if (extraBtnsContainer.classList.contains('hidden')) {
         expandBtn.innerText = '◀'
     }
     else {
@@ -86,3 +120,4 @@ expandBtn.addEventListener('click', () => {
 
 keysToDisplay(numKeys);
 keysToDisplay(operatorKeys);
+keysToDisplay(extraKeys);
